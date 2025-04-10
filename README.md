@@ -1,20 +1,19 @@
 # Dungeon of the Dead
 
-## [Play](https://frigidough.itch.io/dungeon-of-the-dead) the game
+Source Code of Dungeon of the Dead with Unreal Engine 5
 
-Look for a way out!
+[![itch.io Version](https://img.shields.io/badge/Download%20on-itch.io-FA5C5C.svg?logoWidth=150)](https://frigidough.itch.io/dungeon-of-the-dead)  
 
-**Controls:** 
+## Highlights 
 
-Toggle Full Screen/Window: O
+### Live Stream UI
 
-Toggle High/Low Resolution: P
+Developed an in-game live stream-style UI using C++ and Unreal Engine's UMG
 
-Movement: W, S, A, D
-
-Jump: Space
-
-Grab/Release: LMB
-
-Pause: ESC
+<p align="center">
+  <img src="https://media.giphy.com/media/RzLGZEn35ychm6fTPs/giphy.gif" width="100%">
+  <img src="https://media.giphy.com/media/aqb7VQnbGI58bNykR1/giphy.gif" width="100%">
+  <br>
+  <em>Comment Section And Viewer Number Updates Based On Player Progression In Game</em>
+</p>
 
