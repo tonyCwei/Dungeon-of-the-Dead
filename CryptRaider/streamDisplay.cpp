@@ -11,7 +11,6 @@ void UstreamDisplay::NativeConstruct()
 {
     Super::NativeConstruct();
     InitlizeCommentSection();
-    //updateComment();
     updateViewerCount();
     
 }
@@ -19,60 +18,24 @@ void UstreamDisplay::NativeConstruct()
 
 
 
-//void UstreamDisplay::Construct()
-//{
-//    Super::NativeConstruct();
-//    InitlizeCommentSection();
-//    //updateComment();
-//    //updateViewerCount();
-//    GetWorld()->GetTimerManager().ClearTimer(viewerTimeHandle);
-//}
-
 void UstreamDisplay::InitlizeCommentSection()
 {
-    
-
-
     userText = { userName0, userName1, userName2, userName3, userName4 };
     commentText = { comment0, comment1, comment2, comment3, comment4 };
 
-
     for (int i = 0; i < userText.Num(); ++i) {
-
-        //int32 UserNameIndex = FMath::RandRange(0, userNameArr.Num()-1);
-        
         int32 colorIndex = FMath::RandRange(0, userNameColor.Num()-1);
         colorIndices.Push(colorIndex);
-
-        //int32 commentIndex = FMath::RandRange(0, startComment.Num()-1);
-
-
-
         userText[i]->SetText(FText::FromString(""));
         userText[i]->SetColorAndOpacity(userNameColor[colorIndex]);
-        //FString comment = ": " + startComment[commentIndex];
         FString comment = "";
         commentText[i]->SetText(FText::FromString(comment));
     }
 
-
-   /* userText[0]->SetText(FText::FromString(userNameArr[0]));
-    userText[0]->SetColorAndOpacity(userNameColor[0]);
-    FString comment = ": " + startComment[0];
-    commentText[0]->SetText(FText::FromString(comment));
-    */
 }
 
 void UstreamDisplay::nextComment()
 {
-
-   /* if (commentCount >= maxComment) {
-        
-        return;
-    }*/
-
-
-
     for (int i = userText.Num() - 1; i > 0; --i) {
         userText[i]->SetText(userText[i-1]->GetText());
 
@@ -105,8 +68,6 @@ void UstreamDisplay::nextComment()
 
 void UstreamDisplay::updateComment()
 {
-    //maxComment = commentPool.Num();
-    
     GetWorld()->GetTimerManager().SetTimer(commentTimeHandle, [&]()
         {   
             if (commentPool.IsEmpty() || commentCount >= maxComment) {
@@ -218,25 +179,6 @@ void UstreamDisplay::switchToCoffinChat()
     GetWorld()->GetTimerManager().ClearTimer(viewerTimeHandle);
     updateViewerCount();
     
-    
-    /*commentPool = {
-         "What is this laugh?",
-        "This sounds like Joke's laugh",
-        "Noooooo, don't goooooo",
-        "this is giving me creeps",
-        "Joker vibes, anyone?",
-         "Please don't back up now",
-         "That laugh though...",
-         "didn't know joker was in town"
-    };
-
-    resetCommentCount();
-    setMaxComment(commentPool.Num());
-    setCommentFreq(1.5);
-
-    updateComment();
-    increaseViewer(50, viewerCountFreq * 4);*/
-
 }
 
 void UstreamDisplay::switchToSkeletonChat()
@@ -294,10 +236,6 @@ void UstreamDisplay::pushToCommentPool(FString comment)
 }
 
 
-
-
-
-
 void UstreamDisplay::nextViewerCount()
 {
    
@@ -310,7 +248,6 @@ void UstreamDisplay::nextViewerCount()
         viewerCountDigits.Push(digit);
         viewerCount /= 10;
     }
-
 
     FString viewerCountString;
     int32 count = 0;
@@ -329,14 +266,10 @@ void UstreamDisplay::nextViewerCount()
         ViewerNumber->SetText(FText::FromString(viewerCountString));
     }
    
-
-   
-
 }
 
 void UstreamDisplay::updateViewerCount()
 {
-    //GetWorld()->GetTimerManager().ClearTimer(viewerTimeHandle);
     GetWorld()->GetTimerManager().SetTimer(viewerTimeHandle, [&]()
         {
             nextViewerCount();
@@ -351,9 +284,7 @@ void UstreamDisplay::increaseViewer(int32 value, float increaseTime)
 {
     minViewerIncrease += value;
     maxViewerIncrease += value;
-    
 
-    
     GetWorld()->GetTimerManager().SetTimer(resetTimer, [&]()
         {
             resetViewerIncreaseStatus();
