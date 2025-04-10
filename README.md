@@ -12,7 +12,7 @@ Developed an in-game live stream-style UI using C++ and Unreal Engine's UMG
 
 <p align="center">
   <img src="https://media.giphy.com/media/RzLGZEn35ychm6fTPs/giphy.gif" width="100%">
-  <img src="https://media.giphy.com/media/aqb7VQnbGI58bNykR1/giphy.gif" width="100%">
+  <img src="https://media.giphy.com/media/PijuPQnZlCjVTNyHmw/giphy.gif" width="100%">
   <br>
   <em>Comment Section And Viewer Number Updates Based On Player Progression In Game</em>
 </p>
