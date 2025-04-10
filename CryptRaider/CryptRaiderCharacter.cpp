@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Components/SpotLightComponent.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -15,7 +16,7 @@
 ACryptRaiderCharacter::ACryptRaiderCharacter()
 {
 	// Character doesnt have a rifle at start
-	bHasRifle = false;
+	// bHasRifle = false;
 	
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -26,7 +27,13 @@ ACryptRaiderCharacter::ACryptRaiderCharacter()
 	FirstPersonCameraComponent->SetRelativeLocation(FVector(-10.f, 0.f, 60.f)); // Position the camera
 	FirstPersonCameraComponent->bUsePawnControlRotation = true;
 
-	// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
+
+	// Create SpotLight
+	flashLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("Flashlight"));
+	flashLight->SetupAttachment(FirstPersonCameraComponent);
+
+
+	//// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
 	Mesh1P = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMesh1P"));
 	Mesh1P->SetOnlyOwnerSee(true);
 	Mesh1P->SetupAttachment(FirstPersonCameraComponent);
@@ -107,4 +114,9 @@ void ACryptRaiderCharacter::SetHasRifle(bool bNewHasRifle)
 bool ACryptRaiderCharacter::GetHasRifle()
 {
 	return bHasRifle;
+}
+
+
+void ACryptRaiderCharacter::toggleFlash() {
+	flashLight->ToggleVisibility();
 }
