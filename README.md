@@ -17,3 +17,10 @@ Developed an in-game live stream-style UI using C++ and Unreal Engine's UMG
   <em>Comment Section And Viewer Number Updates Based On Player Progression In Game</em>
 </p>
 
+### Puzzles
+
+<p align="center">
+  <img src="https://media.giphy.com/media/UD38xZ0gApzhdrvdMu/giphy.gif" width="100%">
+  <br>
+  <em>Finding the Key to Open the Downstairs Doorway</em>
+</p>
