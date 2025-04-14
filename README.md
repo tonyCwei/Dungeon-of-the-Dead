@@ -24,3 +24,9 @@ Developed an in-game live stream-style UI using C++ and Unreal Engine's UMG
   <br>
   <em>Finding the Key to Open the Downstairs Doorway</em>
 </p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/I2EBAYqmTxs0jK5sro/giphy.gif" width="100%">
+  <br>
+  <em>Finding A Replacement Statue to Put onto the Pedestal</em>
+</p>
